@@ -23,9 +23,18 @@ jobs:
           aosp-gcc: true
           aosp-clang: true
           ksu: true
-          ksu-repo: rifsxd/KernelSU-Next
-          ksu-version: main
           android-version: 12
           aosp-clang-version: r383902
           disable-lto: true
           anykernel3: true
+          
+      - name: Force KernelSU-Next
+        run: |
+          # Переходим в папку с ядром, где скрипт уже создал папку KernelSU
+          cd msm-4.14
+          # Удаляем старую версию 0.9.5
+          rm -rf KernelSU
+          # Клонируем Next вместо неё
+          git clone https://github.com/rifsxd/KernelSU-Next KernelSU
+          # Пересобираем ядро с учетом изменений
+          make -j$(nproc)
