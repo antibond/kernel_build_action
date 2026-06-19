@@ -15,7 +15,7 @@ jobs:
       - name: Build Kernel
         uses: dabao1955/kernel_build_action@main
         with:
-                    kernel-url: https://github.com/fannndi/kernel-12
+          kernel-url: https://github.com/fannndi/kernel-12
           kernel-dir: msm-4.14
           kernel-branch: fresh-282
           config: surya_defconfig
@@ -28,4 +28,3 @@ jobs:
           aosp-clang-version: r383902
           disable-lto: true
           anykernel3: true
-
