@@ -23,6 +23,7 @@ jobs:
           aosp-gcc: true
           aosp-clang: true
           ksu: true
+          ksu-repo: rifsxd/KernelSU-Next
           ksu-version: main
           android-version: 12
           aosp-clang-version: r383902
